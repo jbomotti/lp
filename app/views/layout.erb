@@ -1,23 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <!-- 
-    normalize.css removes cross-browser differences in defaults, e.g.,
-    differences in how form elements appear between Firefox and IE
-    See: http://necolas.github.com/normalize.css/
-  -->
-  <link rel="stylesheet" href="/css/normalize.css">
-  <!--
-    application.css is where you put your styles
-  -->
-  <link rel="stylesheet" href="/css/application.css">
-
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script src="/js/application.js"></script>
-
-  <title></title>
+<link rel="stylesheet" type="text/css" href="/css/materialize.css">
+<link rel="stylesheet" type="text/css" href="/css/languagepair.css">
+<title>Language Pair</title>
 </head>
 <body>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="/" class="brand-logo hide-on-med-and-down">Language Pair</a>
+      <ul id="nav-mobile" class="right">
+        <li><a href="/languages">All Languages</a></li>
+        <li><a href="/about_us">About</a></li>
+        <% if auth_logged_in? %>
+          <li><a href="/logout">Logout</a></li>
+        <% else %>
+          <li><a href="/login">Login</a></li>
+          <li><a href="/register">Register</a></li>
+        <% end %>
+      </ul>
+    </div>
+  </nav>
+
+
+<div class="row">
   <%= yield %>
+</div>
+
+
+<footer class="page-footer">
+    <div class="footer-copyright">
+      <div class="container">
+      © 2015 Copyright <a class="grey-text text-lighten-4 right" href="https://github.com/jbomotti">James Bomotti</a>
+      </div>
+    </div>
+  </footer>
+  <script type="text/javascript" src="/js/jquery-2.1.1.min.js"></script>
+
+  <script src="/js/materialize.js"></script>
+
+  <script src="/js/tinderpizza.js"></script>
+
 </body>
 </html>

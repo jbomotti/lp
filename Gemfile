@@ -7,6 +7,7 @@ gem 'pg'
 # Sinatra driver
 gem 'sinatra'
 gem 'sinatra-contrib'
+gem "thin"
 
 gem 'activesupport', '~>4.2.0'
 gem 'activerecord', '~>4.2.0'
