@@ -1,6 +1,9 @@
 class User < ActiveRecord::Base
   include BCrypt
 
+  has_many :language_learners
+  has_many :languages, through: :language_learners
+
   validates :username, presence: true, uniqueness: true
 
   # Time for the BCrypt password magic!
