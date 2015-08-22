@@ -41,7 +41,27 @@ end
 get '/profile' do
   redirect '/' unless auth_logged_in?
   @user = auth_current_user
+  @languages = @user.languages
   erb :'users/profile'
+end
+
+get '/edit' do
+  @user = auth_current_user
+  erb :'users/edit'
+end
+
+post '/edit' do
+  @user = auth_current_user
+  @user.first_name = params[:first_name]
+  @user.last_name = params[:last_name]
+  # @user.password = params[:password] unless params[:password] == ""
+  if @user.save
+    flash[:message] = 'Thank you for updating your info'
+    redirect '/profile'
+  else
+    @form_error = 'Unable to register your changes'
+    erb :'users/edit'
+  end
 end
 
 get '/logout' do
