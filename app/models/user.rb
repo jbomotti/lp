@@ -12,4 +12,8 @@ class User < ActiveRecord::Base
     @password = Password.create(new_password)
     self.password_hash = @password
   end
+
+  def fullname
+    self.first_name + " " + self.last_name
+  end
 end

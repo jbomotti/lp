@@ -6,30 +6,53 @@
 <% end %>
 
 <form class="col s12" action="/register" method="post">
-    <div class="row">
-<% if @user.errors[:username].any? %>
-    <div style="color: red;"><%= @user.errors[:username].first %></div>
-<% end %>
+
+  <div class="row">
+    <% if @user.errors[:first_name].any? %>
+      <div style="color: red;"><%= @user.errors[:first_name].first %></div>
+    <% end %>
+    <div class="input-field col s12">
+      <input name="first_name" type="text" class="validate" value="<%= @user.first_name %>">
+      <label for="first_name">First Name</label>
+    </div>
+  </div>
+
+  <div class="row">
+    <% if @user.errors[:last_name].any? %>
+      <div style="color: red;"><%= @user.errors[:last_name].first %></div>
+    <% end %>
+    <div class="input-field col s12">
+      <input name="last_name" type="text" class="validate" value="<%= @user.last_name %>">
+      <label for="last_name">Last Name</label>
+    </div>
+  </div>
+
+  <div class="row">
+    <% if @user.errors[:username].any? %>
+      <div style="color: red;"><%= @user.errors[:username].first %></div>
+    <% end %>
     <div class="input-field col s12">
       <input name="username" type="text" class="validate" value="<%= @user.username %>">
       <label for="username">Username</label>
     </div>
   </div>
-    <div class="row">
-<% if @user.errors[:password].any? %>
-    <div style="color: red;"><%= @user.errors[:password].first %></div>
-<% end %>
+
+  <div class="row">
+    <% if @user.errors[:password].any? %>
+      <div style="color: red;"><%= @user.errors[:password].first %></div>
+    <% end %>
     <div class="input-field col s12">
-      <input name="password" type="text" class="validate" value="">
+      <input name="password" type="password" class="validate" value="">
       <label for="password">Password</label>
     </div>
   </div>
-    <div class="row">
-<% if @user.errors[:password_confirmation].any? %>
-    <div style="color: red;"><%= @user.errors[:password_confirmation].first %></div>
-<% end %>
+
+  <div class="row">
+    <% if @user.errors[:password_confirmation].any? %>
+      <div style="color: red;"><%= @user.errors[:password_confirmation].first %></div>
+    <% end %>
     <div class="input-field col s12">
-      <input name="password_confirmation" type="text" class="validate" value="">
+      <input name="password_confirmation" type="password" class="validate" value="">
       <label for="password_confirmation">Confirmation</label>
     </div>
   </div>
@@ -38,4 +61,5 @@
     <input class="btn" type="submit" name="action" value="Register"/>
     <a class="btn" href="/">Cancel<a/>
   </div>
+
 </form>
