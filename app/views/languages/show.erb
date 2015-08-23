@@ -1,0 +1,15 @@
+<h1><%= @language.name %></h1>
+<h4><%= @language.code %></h4>
+<br>
+<h6>Current Learners</h6>
+<ul>
+<% @language.users.each do |learner| %>
+  <li><%= learner.fullname %></li>
+<% end %>
+</ul>
+
+<% if auth_logged_in? %>
+  <div class="row">
+    <a class="btn" href="/languages/delete/<%= @language.id %>">Delete Language<a/>
+  </div>
+<% end %>

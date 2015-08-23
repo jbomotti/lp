@@ -1,0 +1,11 @@
+<h1>Confirm Language Deletetion</h1>
+<h4><%= @language.name %></h4>
+
+<form class="col s12" action="/languages/destroy" method="post">
+  <input name="_method" type="hidden" value="delete" />
+  <input name="language_id" type="hidden" class="validate" value="<%= @language.id %>">
+  <div class="row">
+    <input class="btn" type="submit" name="action" value="Delete"/>
+    <a class="btn" href="/languages">Cancel<a/>
+  </div>
+</form>
