@@ -1,7 +1,7 @@
 <h2>Language Pair Home Page</h2>
 <h3>Top Languages</h3>
 <ul>
-  <li><b>Japanese</b></li>
-  <li><b>Spanish</b></li>
-  <li><b>Tagalog</b></li>
+  <% @languages.each do |language| %>
+    <li><b><%= language.name %></b></li>
+  <% end %>
 </ul>
