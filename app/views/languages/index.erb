@@ -9,15 +9,14 @@
 <% @languages.each do |language| %>
   <div class="col s6 m3">
     <div class="card small">
-      <div class="card-image">
-       <img src="/images/pizza.jpg" alt="" class="circle">
-        <span class="card-title"><%= language.name %></span>
+      <div class="card-image lang-image">
+       <!-- <img src="/images/pizza.jpg" alt="" class="circle"> -->
+       <h1 class="circle lang-code"><%= language.code %></h1>
+        <!-- <span class="card-title"><%= language.name %></span> -->
       </div>
-      <div class="card-content">
-        <p>Current Learners: <%= language.language_learners.count %></p>
-        <p>
-          <%= language.code %>
-        </p>
+      <div class="card-content lang-name">
+        <h4><%= language.name %></h4>
+        <p class="learner-count">Current Learners: <%= language.language_learners.count %></p>
       </div>
       <div class="card-action">
         <a href="/languages/<%= language.id %>">Details</a>
