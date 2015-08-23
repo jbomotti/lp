@@ -19,6 +19,7 @@ gem 'shotgun'
 
 gem 'gravatarify'
 gem 'bcrypt'
+gem 'iso-639'
 
 group :test do
   gem 'shoulda-matchers'

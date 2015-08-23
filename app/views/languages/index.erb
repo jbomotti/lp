@@ -1,0 +1,27 @@
+<h1>All Languages</h1>
+
+<% if auth_logged_in? %>
+  <div class="row">
+    <a class="btn" href="/languages/new">Add a Language<a/>
+  </div>
+<% end %>
+
+<% @languages.each do |language| %>
+  <div class="col s6 m3">
+    <div class="card small">
+      <div class="card-image">
+       <img src="/images/pizza.jpg" alt="" class="circle">
+        <span class="card-title"><%= language.name %></span>
+      </div>
+      <div class="card-content">
+        <p>Current Learners: <%= language.language_learners.count %></p>
+        <p>
+          <%= language.code %>
+        </p>
+      </div>
+      <div class="card-action">
+        <a href="/languages/<%= language.id %>">Details</a>
+      </div>
+    </div>
+  </div>
+<% end %>

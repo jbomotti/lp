@@ -19,6 +19,7 @@ require 'sinatra'
 require "sinatra/reloader" if development?
 require 'sinatra/flash'
 require "thin"
+require 'iso-639'
 
 require 'erb'
 
