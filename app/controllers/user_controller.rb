@@ -39,10 +39,15 @@ post '/login' do
 end
 
 get '/profile' do
-  redirect '/' unless auth_logged_in?
-  @user = auth_current_user
-  @languages = @user.languages
-  erb :'users/profile'
+  # redirect '/' unless auth_logged_in?
+  if auth_logged_in
+    @languages = @user.languages
+    @user = auth_current_user
+    erb :'users/profile'
+  else
+    @languages = top_languages
+    erb :home
+  end
 end
 
 get '/edit' do
