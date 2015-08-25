@@ -1,25 +1,25 @@
 <h1>Edit Profile</h1>
 
 <form class="col s12" action="/edit" method="post">
-  <div class="row">
+  <!-- <div class="row"> -->
     <% if @user.errors[:first_name].any? %>
       <div style="color: red;"><%= @user.errors[:first_name].first %></div>
     <% end %>
-    <div class="input-field col s12">
-      <input name="first_name" type="text" class="validate" value="<%= @user.first_name %>">
-      <label for="name">First Name</label>
+    <div class="input-field col s6">
+      <input plaveholder="First Name" name="first_name" type="text" class="validate" value="<%= @user.first_name %>">
+      <label for="name"></label>
     </div>
-  </div>
+  <!-- </div> -->
 
-  <div class="row">
+  <!-- <div class="row"> -->
     <% if @user.errors[:last_name].any? %>
       <div style="color: red;"><%= @user.errors[:last_name].first %></div>
     <% end %>
-    <div class="input-field col s12">
-      <input name="last_name" type="text" class="validate" value="<%= @user.last_name %>">
-      <label for="last_name">Last Name</label>
+    <div class="input-field col s6">
+      <input placeholder="Last Name" name="last_name" type="text" class="validate" value="<%= @user.last_name %>">
+      <label for="last_name"></label>
     </div>
-  </div>
+  <!-- </div> -->
 
   <!-- <div class="row">
     <% if @user.errors[:password].any? %>

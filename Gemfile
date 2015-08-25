@@ -20,6 +20,7 @@ gem 'shotgun'
 gem 'gravatarify'
 gem 'bcrypt'
 gem 'iso-639'
+gem 'easy_translate'
 
 group :test do
   gem 'shoulda-matchers'
