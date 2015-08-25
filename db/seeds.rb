@@ -1,5 +1,6 @@
-User.create(first_name: 'James', last_name: 'Bomotti', username: 'jbomotti')
-User.first.password = 'lalala'
+User.create(first_name: 'James', last_name: 'Bomotti', username: 'jbomotti', password: 'lalala')
+# user = User.first
+# user.password = 'lalala'
 Language.create(name: 'Japanese')
 Language.create(name: 'Spanish')
 jpn = Language.first

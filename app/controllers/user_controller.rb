@@ -40,9 +40,9 @@ end
 
 get '/profile' do
   # redirect '/' unless auth_logged_in?
-  if auth_logged_in
-    @languages = @user.languages
+  if auth_logged_in?
     @user = auth_current_user
+    @languages = @user.languages
     erb :'users/profile'
   else
     @languages = top_languages
