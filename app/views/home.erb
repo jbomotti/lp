@@ -5,4 +5,4 @@
     <li><b><%= language.name %></b></li>
   <% end %>
 </ul>
-<p><%= EasyTranslate.translate('Hello, world', :to => :japanese) %><p>
+<p><%= EasyTranslate.translate('Hello, world', :to => top_translate(@languages)) %><p>
