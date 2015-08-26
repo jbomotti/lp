@@ -5,10 +5,10 @@
     <div style="color: red;"><%= @language.errors[:name].first %></div>
 <% end %>
     <div class="input-field col s12">
-      <input name="name" type="text" class="validate" value="<%= @language.name %>">
-      <label for="name">Name</label>
+      <input placeholder="Name" name="name" type="text" class="validate" value="<%= @language.name %>">
+      <label for="name"></label>
     </div>
-  </div>   
+  </div>
 
   <input class="btn" type="submit" name="action" value="Add"/>
 </form>

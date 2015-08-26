@@ -10,4 +10,17 @@ helpers do
   def top_translate(languages)
     languages[0].name.downcase.to_sym
   end
+
+  def has_language?(language)
+    user = auth_current_user
+    user.languages.each do |lang|
+      return true if lang.name = language.name
+    end
+    false
+  end
+
+  def add_language(language)
+    user = auth_current_user
+    user.languages << language
+  end
 end

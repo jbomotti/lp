@@ -35,3 +35,9 @@ get '/languages/:id' do
   @language = Language.find(params[:id])
   erb :'languages/show'
 end
+
+get '/languages/:id/add' do
+  @language = Language.find(params[:id])
+  add_language(@language)
+  erb :'languages/show'
+end
