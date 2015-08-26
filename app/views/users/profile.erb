@@ -1,13 +1,13 @@
 <h1>Profile</h1>
 <div>Welcome, <%= @user.fullname %></div>
-<br>
-<ul>
 <div>
   <% unless @languages.empty? %>
-  <h4>Your Languages</h4>
-    <% @languages.each do |language| %>
-      <li><%= language.name %></li>
-    <% end %>
+    <h4>Your Languages</h4>
+    <div class="collection">
+      <% @languages.each do |language| %>
+        <a href="/languages/<%= language.id %>" class="collection-item"> <%= language.name %> </a>
+      <% end %>
+    </div>
   <% end %>
   <form class="col s12" action="/edit" method="get">
     <div class="row">
