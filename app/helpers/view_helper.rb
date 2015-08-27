@@ -13,10 +13,7 @@ helpers do
 
   def has_language?(language)
     user = auth_current_user
-    user.languages.each do |lang|
-      return true if lang.name = language.name
-    end
-    false
+    user.languages.include?(language)
   end
 
   def add_language(language)
