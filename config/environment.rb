@@ -21,6 +21,7 @@ require 'sinatra/flash'
 require "thin"
 require 'iso-639'
 require 'easy_translate'
+require 'giphy'
 
 require 'erb'
 

@@ -21,6 +21,7 @@ gem 'gravatarify'
 gem 'bcrypt'
 gem 'iso-639'
 gem 'easy_translate'
+gem 'giphy'
 
 group :test do
   gem 'shoulda-matchers'
