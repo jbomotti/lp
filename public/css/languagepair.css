@@ -19,3 +19,7 @@
 .copyright-footer {
   text-align: center;
 }
+
+#user-image img {
+  border-radius: 50%;
+}
