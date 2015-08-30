@@ -1,13 +1,7 @@
 <h1>Register</h1>
 
-
-<!-- <% if @form_error %>
-<div><%= @form_error %></div>
-<% end %> -->
-
 <form class="col s12" action="/register" method="post">
 
-  <!-- <div class="row"> -->
     <% if @user.errors[:first_name].any? %>
       <div style="color: red;"><%= @user.errors[:first_name].first %></div>
     <% end %>
@@ -15,9 +9,7 @@
       <input placeholder="First Name" name="first_name" type="text" class="validate" value="<%= @user.first_name %>">
       <label for="first_name"></label>
     </div>
-  <!-- </div> -->
 
-  <!-- <div class="row"> -->
     <% if @user.errors[:last_name].any? %>
       <div style="color: red;"><%= @user.errors[:last_name].first %></div>
     <% end %>
@@ -25,9 +17,7 @@
       <input placeholder="Last Name" name="last_name" type="text" class="validate" value="<%= @user.last_name %>">
       <label for="last_name"></label>
     </div>
-  <!-- </div> -->
 
-  <!-- <div class="row"> -->
     <% if @user.errors[:username].any? %>
       <div style="color: red;"><%= @user.errors[:username].first %></div>
     <% end %>
@@ -35,9 +25,7 @@
       <input placeholder="Username" name="username" type="text" class="validate" value="<%= @user.username %>">
       <label for="username"></label>
     </div>
-  <!-- </div> -->
 
-  <!-- <div class="row"> -->
     <% if @user.errors[:password].any? %>
       <div style="color: red;"><%= @user.errors[:password].first %></div>
     <% end %>
@@ -45,9 +33,7 @@
       <input placeholder="Password" name="password" type="password" class="validate" value="">
       <label for="password"></label>
     </div>
-  <!-- </div> -->
 
-  <!-- <div class="row"> -->
     <% if @user.errors[:password_confirmation].any? %>
       <div style="color: red;"><%= @user.errors[:password_confirmation].first %></div>
     <% end %>
@@ -55,7 +41,6 @@
       <input placeholder="Confirmation" name="password_confirmation" type="password" class="validate" value="">
       <label for="password_confirmation"></label>
     </div>
-  <!-- </div> -->
 
   <div class="row">
     <input class="btn" type="submit" name="action" value="Register"/>
