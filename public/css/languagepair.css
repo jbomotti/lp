@@ -1,5 +1,6 @@
-.yielded {
+#yielded {
   text-align: center;
+  background-image: url('../public/images/bg02.jpeg');
 }
 
 .lang-code {
