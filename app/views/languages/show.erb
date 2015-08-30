@@ -13,6 +13,9 @@
     <% unless has_language?(@language) %>
       <a class="btn" href="/languages/<%= @language.id %>/add">Add to My Languages<a/>
     <% end %>
+    <% if has_language?(@language) %>
+      <a class="btn" href="/languages/<%= @language.id %>/delete">Remove From My Languages<a/>
+    <% end %>
     <a class="btn" href="/languages/delete/<%= @language.id %>">Delete Language<a/>
   </div>
 <% end %>

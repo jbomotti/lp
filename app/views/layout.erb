@@ -1,45 +1,42 @@
 <html>
-<head>
-<link rel="stylesheet" type="text/css" href="/css/materialize.css">
-<link rel="stylesheet" type="text/css" href="/css/languagepair.css">
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" /> -->
-<title>Language Pair</title>
-</head>
-<body>
-  <nav>
-    <div class="nav-wrapper">
-      <a href="/" class="brand-logo hide-on-med-and-down">Language Pair</a>
-      <ul id="nav-mobile" class="right">
-        <li><a href="/languages">All Languages</a></li>
-        <li><a href="/about">About</a></li>
-        <% if auth_logged_in? %>
-          <li><a href="/profile">Profile</a></li>
-          <li><a href="/logout">Logout</a></li>
-        <% else %>
-          <li><a href="/login">Login</a></li>
-          <li><a href="/register">Register</a></li>
-        <% end %>
-      </ul>
-    </div>
-  </nav>
-
-
-<div class="row yielded">
-  <%= yield %>
-</div>
-
-
-<footer class="page-footer">
-    <div class="footer-copyright">
-      <div class="container copyright-footer">
-      © 2015 Copyright &nbsp;<a class="grey-text text-lighten-4" href="https://github.com/jbomotti">James Bomotti</a>
+  <head>
+    <link rel="stylesheet" type="text/css" href="/css/materialize.css">
+    <link rel="stylesheet" type="text/css" href="/css/languagepair.css">
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" /> -->
+    <title>Language Pair</title>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-wrapper">
+        <a href="/" class="brand-logo hide-on-med-and-down">Language Pair</a>
+        <ul id="nav-mobile" class="right">
+          <li><a href="/languages">All Languages</a></li>
+          <li><a href="/about">About</a></li>
+          <% if auth_logged_in? %>
+            <li><a href="/profile">Profile</a></li>
+            <li><a href="/logout">Logout</a></li>
+          <% else %>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/register">Register</a></li>
+          <% end %>
+        </ul>
       </div>
+    </nav>
+
+    <!-- <img src="<%= Giphy.gif_by_id('l41lO6nIwIANtWibK').url %>.gif"/> -->
+
+    <div class="row yielded">
+      <%= yield %>
     </div>
-  </footer>
 
-  <!-- <script src="/js/materialize.js"></script> -->
 
-  <!-- <script src="/js/tinderpizza.js"></script> -->
+    <footer class="page-footer">
+      <div class="footer-copyright">
+        <div class="container copyright-footer">
+          © 2015 Copyright &nbsp;<a class="grey-text text-lighten-4" href="https://github.com/jbomotti">James Bomotti</a>
+        </div>
+      </div>
+    </footer>
 
-</body>
+  </body>
 </html>
