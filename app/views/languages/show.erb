@@ -4,7 +4,11 @@
 <h6>Current Learners</h6>
 <ul>
 <% @language.users.each do |learner| %>
-  <li><%= learner.fullname %></li>
+  <% if has_language?(@language) %>
+    <li><a href="/pair/<%= learner.id %>?lang_id=<%= @language.id %>"><%= learner.fullname %></a></li>
+  <% else %>
+    <li><%= learner.fullname %></li>
+  <% end %>
 <% end %>
 </ul>
 
@@ -12,13 +16,8 @@
   <div class="row">
     <% if has_language?(@language) %>
       <a class="btn" href="/languages/<%= @language.id %>/delete">Remove From My Languages</a>
-    <% else has_language?(@language) %>
+    <% else  %>
       <a class="btn" href="/languages/<%= @language.id %>/add">Add to My Languages</a>
     <% end %>
   </div>
-  <div id="placeholder-div"></div>
 <% end %>
-
-<script>
-  gapi.hangout.render('placeholder-div', { 'render': 'createhangout' });
-</script>
