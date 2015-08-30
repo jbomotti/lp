@@ -1,6 +1,6 @@
 <h2>Initiate Pairing Session?</h2>
 
-<h3>Pair: <%= @pair.fullname %></h3>
+<h3 id="pair-name">Pair: &nbsp;<%= gravatar_tag @pair.email, :size => 40 %>&nbsp;<%= @pair.fullname %></h3>
 
 <h3>Language: <%= @language.name %></h3>
 
