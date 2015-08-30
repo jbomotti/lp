@@ -1,13 +1,15 @@
 <h1><%= @language.name %></h1>
 <h4><%= @language.code %></h4>
 <br>
-<h6>Current Learners</h6>
+<h6>Other Learners</h6>
 <ul>
 <% @language.users.each do |learner| %>
-  <% if has_language?(@language) %>
-    <li><a href="/pair/<%= learner.id %>?lang_id=<%= @language.id %>"><%= learner.fullname %></a></li>
-  <% else %>
-    <li><%= learner.fullname %></li>
+  <% unless learner == auth_current_user %>
+    <% if has_language?(@language) %>
+      <li><a href="/pair/<%= learner.id %>?lang_id=<%= @language.id %>"><%= learner.fullname %></a></li>
+    <% else %>
+      <li><%= learner.fullname %></li>
+    <% end %>
   <% end %>
 <% end %>
 </ul>
