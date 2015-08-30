@@ -20,6 +20,13 @@
       <label for="last_name"></label>
     </div>
   <!-- </div> -->
+    <% if @user.errors[:email].any? %>
+      <div style="color: red;"><%= @user.errors[:email].first %></div>
+    <% end %>
+    <div class="input-field col s6">
+      <input placeholder="E-Mail" name="email" type="text" class="validate" value="<%= @user.email %>">
+      <label for="email"></label>
+    </div>
 
   <!-- <div class="row">
     <% if @user.errors[:password].any? %>

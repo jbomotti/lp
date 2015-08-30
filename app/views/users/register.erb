@@ -21,9 +21,17 @@
     <% if @user.errors[:username].any? %>
       <div style="color: red;"><%= @user.errors[:username].first %></div>
     <% end %>
-    <div class="input-field col s12">
+    <div class="input-field col s6">
       <input placeholder="Username" name="username" type="text" class="validate" value="<%= @user.username %>">
       <label for="username"></label>
+    </div>
+
+    <% if @user.errors[:email].any? %>
+      <div style="color: red;"><%= @user.errors[:email].first %></div>
+    <% end %>
+    <div class="input-field col s6">
+      <input placeholder="E-Mail" name="email" type="text" class="validate" value="<%= @user.email %>">
+      <label for="email"></label>
     </div>
 
     <% if @user.errors[:password].any? %>

@@ -1,4 +1,4 @@
-User.create(first_name: 'James', last_name: 'Bomotti', username: 'jbomotti', password: 'lalala')
+User.create(first_name: 'James', last_name: 'Bomotti', username: 'jbomotti', email: 'zilliahix@gmail.com', password: 'lalala')
 # user = User.first
 # user.password = 'lalala'
 Language.create(name: 'Japanese')

@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
   has_many :languages, through: :language_learners
 
   validates :username, presence: true, uniqueness: true
+  validates :email, presence: true, uniqueness: true
+  validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
 
   def password
     @password ||= Password.new(password_hash)

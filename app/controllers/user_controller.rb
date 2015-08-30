@@ -7,6 +7,7 @@ post '/register' do
   @user = User.new
   @user.first_name = params[:first_name]
   @user.last_name = params[:last_name]
+  @user.email = params[:email]
   @user.username = params[:username]
   @user.password = params[:password]
 
@@ -59,6 +60,7 @@ post '/edit' do
   @user = auth_current_user
   @user.first_name = params[:first_name]
   @user.last_name = params[:last_name]
+  @user.email = params[:email]
   # @user.password = params[:password] unless params[:password] == ""
   if @user.save
     flash[:message] = 'Thank you for updating your info'

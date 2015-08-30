@@ -2,7 +2,8 @@
   <head>
     <link rel="stylesheet" type="text/css" href="/css/materialize.css">
     <link rel="stylesheet" type="text/css" href="/css/languagepair.css">
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" /> -->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <title>Language Pair</title>
   </head>
   <body>
@@ -24,7 +25,6 @@
     </nav>
 
     <!-- <img src="<%= Giphy.gif_by_id('l41lO6nIwIANtWibK').url %>.gif"/> -->
-
     <div class="row yielded">
       <%= yield %>
     </div>
@@ -37,6 +37,5 @@
         </div>
       </div>
     </footer>
-
   </body>
 </html>

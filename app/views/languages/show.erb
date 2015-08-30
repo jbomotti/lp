@@ -10,15 +10,15 @@
 
 <% if auth_logged_in? %>
   <div class="row">
-    <% unless has_language?(@language) %>
-      <a class="btn" href="/languages/<%= @language.id %>/add">Add to My Languages<a/>
-    <% end %>
     <% if has_language?(@language) %>
-      <a class="btn" href="/languages/<%= @language.id %>/delete">Remove From My Languages<a/>
+      <a class="btn" href="/languages/<%= @language.id %>/delete">Remove From My Languages</a>
+    <% else has_language?(@language) %>
+      <a class="btn" href="/languages/<%= @language.id %>/add">Add to My Languages</a>
     <% end %>
-    <!-- <a class="btn" href="/languages/delete/<%= @language.id %>">Delete Language<a/> -->
   </div>
+  <div id="placeholder-div"></div>
 <% end %>
 
-
-<!-- href="/languages/<%= @language.id %>" Removed from add button-->
+<script>
+  gapi.hangout.render('placeholder-div', { 'render': 'createhangout' });
+</script>
