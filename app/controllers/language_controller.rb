@@ -39,11 +39,11 @@ end
 get '/languages/:id/add' do
   @language = Language.find(params[:id])
   add_language(@language)
-  erb :'languages/show'
+  redirect back
 end
 
 get '/languages/:id/delete' do
   @language = Language.find(params[:id])
   remove_language(@language)
-  redirect '/languages'
+  redirect back
 end
