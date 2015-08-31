@@ -5,7 +5,7 @@ end
 
 get '/languages/new' do
   @language = Language.new
-  if request.xhr?
+  if request.xhr? ## AKA, is this AJAX?
     erb :'languages/_form', :layout => false, :locals => {:language => @language }
   else
     erb :'languages/new'
@@ -29,23 +29,19 @@ post '/languages' do
   @language.name = params[:name]
 
   if @language.save
-    if request.xhr?
+    if request.xhr? ## Is AJAX?
       erb :'languages/_item', :layout => false, :locals => {:language => @language }
     else
-      flash[:message] = 'Language Added!'
+      # flash[:message] = 'Language Added!'
       redirect "/languages/#{@language.id}"
     end
-  else
-    if request.xhr?
+  else ## If save fails...
+    if request.xhr? ## Another AJAX check to return to fancy form
       halt 400, erb(:'languages/_form', :layout => false, :locals => {:language => @language })
     else
       erb :'languages/new'
     end
   end
-  #   redirect "/languages/#{@language.id}"
-  # else
-  #   erb :'languages/new'
-  # end
 end
 
 get '/languages/:id' do

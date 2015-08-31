@@ -11,10 +11,12 @@ $(function() {
   var spinnerHTML = '<div class="spinner"><div class="dot1"></div><div class="dot2"></div></div>';
   var $newLanguageContainer = $('#new-language-form-container');
 
+  // Clicking the Add Language Button
   $('#new-language-button').click(function(e){
     e.preventDefault();
     $(e.target).hide();
 
+    // Attempt fancy loading magic - much work needed here
     $newLanguageContainer.html(spinnerHTML).addClass('loading').show();
 
     var promise = $.get('/languages/new');
@@ -23,14 +25,17 @@ $(function() {
       $newLanguageContainer.removeClass('loading').empty();
     });
 
+    // Give the div the form from the post set in promise
     promise.done(function(data){
       $newLanguageContainer.html(data);
     });
   });
 
+  // Apply that AJAX magic to the actual submission of the fancy form
   $('#new-language-form-container').on('submit','form', function(e){
     e.preventDefault();
 
+    // Capture all that good form data
     var $form = $(e.target);
     var promise = $.post('/languages', $form.serialize());
 
@@ -39,12 +44,15 @@ $(function() {
       $newLanguageContainer.empty();
       var $languages = $('#languages');
       var $languageHtml = $(dataHtml);
+      // Add new item to the languages page under the div with id languages
+      // Per post route above, item formatted according to _item.erb
       $languages.append($languageHtml);
 
       // Bring that button back!
       $('#new-language-form-container-button').show();
     });
 
+    // If all doesn't go as planedd...
     promise.fail(function(jxhr, data){
       $newLanguageContainer.html(jxhr.responseText);
     });
