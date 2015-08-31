@@ -5,7 +5,11 @@ end
 
 get '/languages/new' do
   @language = Language.new
-  erb :'languages/new'
+  if request.xhr?
+    erb :'languages/_form', :layout => false, :locals => {:language => @language }
+  else
+    erb :'languages/new'
+  end
 end
 
 get '/languages/delete/:id' do
@@ -25,10 +29,23 @@ post '/languages' do
   @language.name = params[:name]
 
   if @language.save
-    redirect "/languages/#{@language.id}"
+    if request.xhr?
+      erb :'languages/_item', :layout => false, :locals => {:language => @language }
+    else
+      flash[:message] = 'Language Added!'
+      redirect "/languages/#{@language.id}"
+    end
   else
-    erb :'languages/new'
+    if request.xhr?
+      halt 400, erb(:'languages/_form', :layout => false, :locals => {:language => @language })
+    else
+      erb :'languages/new'
+    end
   end
+  #   redirect "/languages/#{@language.id}"
+  # else
+  #   erb :'languages/new'
+  # end
 end
 
 get '/languages/:id' do

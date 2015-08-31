@@ -2,17 +2,18 @@
 
 <% if auth_logged_in? %>
   <div class="row">
-    <a class="btn" href="/languages/new">Add a Language<a/>
+    <a id="new-language-button" class="btn" href="/languages/new">Add a Language<a/>
   </div>
+  <!-- Hidden form div for AJAX magic -->
+  <div id="new-language-form-container" class="col s12" style="display: none;"></div>
+
 <% end %>
 
 <% @languages.each do |language| %>
   <div class="col s6 m3">
     <div class="card small">
       <div class="card-image lang-image">
-       <!-- <img src="/images/pizza.jpg" alt="" class="circle"> -->
        <h1 class="circle lang-code"><%= language.code %></h1>
-        <!-- <span class="card-title"><%= language.name %></span> -->
       </div>
       <div class="card-content lang-name">
         <h4><%= language.name %></h4>
