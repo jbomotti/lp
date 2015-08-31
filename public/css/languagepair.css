@@ -1,6 +1,6 @@
 #yielded {
   text-align: center;
-  background-image: url('../public/images/bg02.jpeg');
+  margin: 0;
 }
 
 .lang-code {
@@ -27,4 +27,19 @@
 
 #pair-name img {
   border-radius: 50%;
+}
+
+.outlined-text {
+  color: black;
+  text-shadow:
+  -1px -1px 0 #ffffff,
+  1px -1px 0 #ffffff,
+  -1px 1px 0 #ffffff,
+  1px 1px 0 #ffffff;
+}
+
+.collection {
+  vertical-align: middle;
+  width: 50%;
+  margin-left: 25%;
 }

@@ -1,11 +1,11 @@
-<h2>Profile</h2>
-<div><h3>Welcome, <%= @user.fullname %></h3></div>
+<h2 class="outlined-text">Profile</h2>
+<div class="outlined-text"><h3>Welcome, <%= @user.fullname %></h3></div>
 <div id="user-image">
   <%= gravatar_tag @user.email, :size => 120 %>
 </div>
 <div>
   <% unless @languages.empty? %>
-    <h4>Your Languages</h4>
+    <h4 class="outlined-text">Your Languages</h4>
     <div class="collection">
       <% @languages.each do |language| %>
         <a href="/languages/<%= language.id %>" class="collection-item"> <%= language.name %> </a>

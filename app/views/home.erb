@@ -1,8 +1,8 @@
-<h2>Language Pair</h2>
-<h3>Top Languages</h3>
+<h2 class="outlined-text">Language Pair</h2>
+<h3  class="outlined-text">Top Languages</h3>
 <ul>
   <% @languages.each do |language| %>
-    <li><b><%= language.name %></b></li>
+    <li class="outlined-text"><h5><b><%= language.name %></h5></b></li>
   <% end %>
 </ul>
 <!-- <p><%= EasyTranslate.translate('Welcome to Language Pair', :to => top_translate(@languages)) %><p> -->
