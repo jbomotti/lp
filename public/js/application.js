@@ -6,6 +6,7 @@ $(document).ready(function() {
     var images = ['bg01.jpeg', 'bg02.jpeg', 'bg03.jpeg', 'bg04.jpeg', 'bg05.jpeg', 'bg06.jpeg'];
     $('#yielded').css({'background-image': 'url(images/' + images[Math.floor(Math.random() * images.length)] + ')'});
    });
+   
 
   // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
 });
