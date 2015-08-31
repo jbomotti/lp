@@ -29,4 +29,8 @@ helpers do
     user = auth_current_user
     user.languages.delete(language.id)
   end
+
+  def random_language
+    Language.all.sample.code.to_sym
+  end
 end
