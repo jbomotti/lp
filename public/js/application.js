@@ -27,6 +27,29 @@ $(function() {
       $newLanguageContainer.html(data);
     });
   });
+
+  $('#new-language-form-container').on('submit','form', function(e){
+    e.preventDefault();
+
+    var $form = $(e.target);
+    var promise = $.post('/languages', $form.serialize());
+
+    promise.done(function(dataHtml){
+      // Make form go away
+      $newLanguageContainer.empty();
+      var $languages = $('#languages');
+      var $languageHtml = $(dataHtml);
+      $languages.append($languageHtml);
+
+      // Bring that button back!
+      $('#new-language-form-container-button').show();
+    });
+
+    promise.fail(function(jxhr, data){
+      $newLanguageContainer.html(jxhr.responseText);
+    });
+  });
+
 });
 
 
