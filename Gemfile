@@ -23,6 +23,7 @@ gem 'iso-639'
 gem 'easy_translate'
 gem 'giphy'
 gem 'dotenv'
+gem 'httparty'
 
 group :test do
   gem 'shoulda-matchers'

@@ -24,7 +24,7 @@ require 'easy_translate'
 require 'giphy'
 require 'dotenv'
 Dotenv.load
-puts "LOADED DOTENV"
+require 'httparty'
 
 require 'erb'
 
