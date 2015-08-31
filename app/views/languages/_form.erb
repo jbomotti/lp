@@ -5,7 +5,7 @@
 <% if @language.errors[:name].any? %>
     <div style="color: red;"><%= @language.errors[:name].first %></div>
 <% end %>
-    <div class="input-field col s12">
+    <div class="input-field col s12" id="language-input">
       <input placeholder="Name" name="name" type="text" class="validate" value="<%= @language.name %>">
       <label for="name"></label>
     </div>
@@ -13,3 +13,34 @@
 
   <input class="btn" type="submit" name="action" value="Add"/>
 </form>
+
+<script language="JavaScript">
+
+    //Variable to hold autocomplete options
+    var keys;
+
+    //Load US States as options from CSV - but this can also be created dynamically
+    d3.csv("languages.csv",function (csv) {
+        keys=csv;
+        start();
+    });
+
+
+    //Call back for when user selects an option
+    function onSelect(d) {
+        alert(d.Language);
+    }
+
+    //Setup and render the autocomplete
+    function start() {
+        var mc = autocomplete(document.getElementById('language-input'))
+                .keys(keys)
+                .dataField("Language")
+                .placeHolder("Search Languages - Start typing here")
+                .width(960)
+                .height(500)
+                .onSelected(onSelect)
+                .render();
+    }
+
+</script>
