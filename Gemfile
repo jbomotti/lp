@@ -22,6 +22,7 @@ gem 'bcrypt'
 gem 'iso-639'
 gem 'easy_translate'
 gem 'giphy'
+gem 'dotenv'
 
 group :test do
   gem 'shoulda-matchers'

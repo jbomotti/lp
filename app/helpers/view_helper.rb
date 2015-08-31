@@ -5,10 +5,10 @@ helpers do
     Language.joins(:language_learners).group("languages.id").order("count(language_learners.language_id) desc").limit(3)
   end
 
-  EasyTranslate.api_key = 'AIzaSyBivCByKj2jybJhv9QWu8q2_oLUXzZIyK8'
+  EasyTranslate.api_key = ENV['GOOGLE_API_KEY']
 
   Giphy::Configuration.configure do |config|
-    config.api_key = 'dc6zaTOxFJmzC'
+    config.api_key = ENV['GIPHY_API_KEY']
   end
 
   def top_translate(languages)

@@ -22,6 +22,9 @@ require "thin"
 require 'iso-639'
 require 'easy_translate'
 require 'giphy'
+require 'dotenv'
+Dotenv.load
+puts "LOADED DOTENV"
 
 require 'erb'
 
