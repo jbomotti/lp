@@ -60,8 +60,6 @@ $(function() {
   });
   // End New Language AJAXing ///////////////////////////////
 
-  // Twilio Call For Pairing?? (Ruby only?)
-
 });
 
 
