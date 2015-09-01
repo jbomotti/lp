@@ -5,7 +5,7 @@ $(function() {
 
   // Randomize background images ////////////////////////////
   var images = ['bg01.jpeg', 'bg02.jpeg', 'bg03.jpeg', 'bg04.jpeg', 'bg05.jpeg', 'bg06.jpeg'];
-  $('#yielded').css({'background-image': 'url(images/' + images[Math.floor(Math.random() * images.length)] + ')'});
+  $('html').css({'background-image': 'url(/images/' + images[Math.floor(Math.random() * images.length)] + ')'});
   // End Random Backgroun ///////////////////////////////////
 
   // Attempt new Language form AJAXing //////////////////////

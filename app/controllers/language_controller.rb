@@ -32,7 +32,6 @@ post '/languages' do
     if request.xhr? ## Is AJAX?
       erb :'languages/_item', :layout => false, :locals => {:language => @language }
     else
-      # flash[:message] = 'Language Added!'
       redirect "/languages/#{@language.id}"
     end
   else ## If save fails...
