@@ -6,48 +6,48 @@
       <div style="color: red;"><%= @user.errors[:first_name].first %></div>
     <% end %>
     <div class="input-field col s6">
-      <input placeholder="First Name" name="first_name" type="text" class="validate" value="<%= @user.first_name %>">
-      <label for="first_name"></label>
+      <input name="first_name" type="text" class="validate" value="<%= @user.first_name %>">
+      <label for="first_name">First Name</label>
     </div>
 
     <% if @user.errors[:last_name].any? %>
       <div style="color: red;"><%= @user.errors[:last_name].first %></div>
     <% end %>
     <div class="input-field col s6">
-      <input placeholder="Last Name" name="last_name" type="text" class="validate" value="<%= @user.last_name %>">
-      <label for="last_name"></label>
+      <input name="last_name" type="text" class="validate" value="<%= @user.last_name %>">
+      <label for="last_name">Last Name</label>
     </div>
 
     <% if @user.errors[:username].any? %>
       <div style="color: red;"><%= @user.errors[:username].first %></div>
     <% end %>
     <div class="input-field col s6">
-      <input placeholder="Username" name="username" type="text" class="validate" value="<%= @user.username %>">
-      <label for="username"></label>
+      <input name="username" type="text" class="validate" value="<%= @user.username %>">
+      <label for="username">Username</label>
     </div>
 
     <% if @user.errors[:email].any? %>
       <div style="color: red;"><%= @user.errors[:email].first %></div>
     <% end %>
     <div class="input-field col s6">
-      <input placeholder="E-Mail" name="email" type="text" class="validate" value="<%= @user.email %>">
-      <label for="email"></label>
+      <input name="email" type="email" class="validate" value="<%= @user.email %>">
+      <label for="email">E-Mail</label>
     </div>
 
     <% if @user.errors[:password].any? %>
       <div style="color: red;"><%= @user.errors[:password].first %></div>
     <% end %>
     <div class="input-field col s6">
-      <input placeholder="Password" name="password" type="password" class="validate" value="">
-      <label for="password"></label>
+      <input name="password" type="password" class="validate" value="">
+      <label for="password">Password</label>
     </div>
 
     <% if @user.errors[:password_confirmation].any? %>
       <div style="color: red;"><%= @user.errors[:password_confirmation].first %></div>
     <% end %>
     <div class="input-field col s6">
-      <input placeholder="Confirmation" name="password_confirmation" type="password" class="validate" value="">
-      <label for="password_confirmation"></label>
+      <input name="password_confirmation" type="password" class="validate" value="">
+      <label for="password_confirmation">Confirm Password</label>
     </div>
 
   <div class="row">
