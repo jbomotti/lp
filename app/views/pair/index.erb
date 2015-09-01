@@ -4,17 +4,12 @@
 
 <h3>Language: <%= @language.name %></h3>
 
+<a  href="/pair/notify?pair=<%= @pair.id %>&lang_id=<%= @language.id %>" class="waves-effect waves-light btn"><i class="material-icons left">message</i>Message Your Pair</a>
+<p>
 <div id="placeholder-div"></div>
-
 
 <script> gapi.hangout.render('placeholder-div',
                       { 'render': 'createhangout',
                         'invites': "[{id: '<%= @pair.email %>', invite_type: 'EMAIL'}]",
                       });
-</script>
-
-<script>
-  $('#placeholder-div').click(function() {
-    <%= send_twilio_pairing(@user, @pair, @language) %>
-  });
 </script>
