@@ -3,11 +3,12 @@ $(function() {
   // This guarantees that any elements we bind to will exist on the page
   // when we try to bind to them
 
-  // Randomize background images
+  // Randomize background images ////////////////////////////
   var images = ['bg01.jpeg', 'bg02.jpeg', 'bg03.jpeg', 'bg04.jpeg', 'bg05.jpeg', 'bg06.jpeg'];
   $('#yielded').css({'background-image': 'url(images/' + images[Math.floor(Math.random() * images.length)] + ')'});
+  // End Random Backgroun ///////////////////////////////////
 
-  // Attempt new Language form AJAXing
+  // Attempt new Language form AJAXing //////////////////////
   var spinnerHTML = '<div class="spinner"><div class="dot1"></div><div class="dot2"></div></div>';
   var $newLanguageContainer = $('#new-language-form-container');
 
@@ -57,6 +58,9 @@ $(function() {
       $newLanguageContainer.html(jxhr.responseText);
     });
   });
+  // End New Language AJAXing ///////////////////////////////
+
+  // Twilio Call For Pairing?? (Ruby only?)
 
 });
 

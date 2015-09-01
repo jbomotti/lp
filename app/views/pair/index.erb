@@ -12,3 +12,9 @@
                         'invites': "[{id: '<%= @pair.email %>', invite_type: 'EMAIL'}]",
                       });
 </script>
+
+<script>
+  $('#placeholder-div').click(function() {
+    <%= send_twilio_pairing(@user, @pair, @language) %>
+  });
+</script>
