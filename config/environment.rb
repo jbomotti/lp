@@ -25,6 +25,7 @@ require 'giphy'
 require 'dotenv'
 Dotenv.load
 require 'httparty'
+require 'twilio-ruby'
 
 require 'erb'
 

@@ -24,6 +24,7 @@ gem 'easy_translate'
 gem 'giphy'
 gem 'dotenv'
 gem 'httparty'
+gem 'twilio-ruby'
 
 group :test do
   gem 'shoulda-matchers'
