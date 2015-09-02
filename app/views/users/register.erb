@@ -46,7 +46,7 @@
       <div style="color: red;"><%= @user.errors[:password_confirmation].first %></div>
     <% end %>
     <div class="input-field col s6">
-      <input name="password_confirmation" type="password" class="validate" value="">
+      <input name="password_confirmation" type="password" class="validate" minlength="6" value="">
       <label for="password_confirmation">Confirm Password</label>
     </div>
 
