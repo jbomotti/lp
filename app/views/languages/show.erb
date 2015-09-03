@@ -2,7 +2,7 @@
 <h4><%= @language.code %></h4>
 <br>
 <% if auth_logged_in? %>
-  <h6>Other Learners</h6>
+  <h6 class="outlined-text">Other Learners</h6>
   <ul>
   <% @language.users.each do |learner| %>
     <% unless learner == auth_current_user %>
