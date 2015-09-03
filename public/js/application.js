@@ -50,7 +50,7 @@ $(function() {
       $languages.append($languageHtml);
 
       // Bring that button back!
-      $('#new-language-form-container-button').show();
+      $('#new-language-button').show();
     });
 
     // If all doesn't go as planedd...
