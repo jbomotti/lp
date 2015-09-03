@@ -2,6 +2,15 @@
   text-align: center;
 }
 
+#navbar {
+  background-color: #005abc
+}
+
+#foot {
+  background-color: #005abc
+}
+
+
 .lang-code {
   padding-top: 25px;
   padding-bottom: 0px;
@@ -43,7 +52,7 @@
   margin-left: 25%;
 }
 
-/*---------------AJAX Magic Madness!----------------*/
+/*---------------AJAX Magic Madness! Courtesy of the Great Stu----------------*/
 .loading {
   width: 100%;
   min-height: 20em;
