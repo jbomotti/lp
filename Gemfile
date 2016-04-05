@@ -8,7 +8,7 @@ gem 'pg'
 gem 'sinatra'
 gem 'sinatra-contrib'
 gem 'sinatra-flash'
-gem "thin"
+
 
 gem 'activesupport', '~>4.2.0'
 gem 'activerecord', '~>4.2.0'
