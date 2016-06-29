@@ -10,19 +10,6 @@
 <% end %>
 <div id="languages">
   <% @languages.each do |language| %>
-    <div class="col s6 m3">
-      <div class="card small">
-        <div class="card-image lang-image">
-         <h1 class="circle lang-code"><%= language.code %></h1>
-        </div>
-        <div class="card-content lang-name">
-          <h4><%= language.name %></h4>
-          <p class="learner-count">Current Learners: <%= language.language_learners.count %></p>
-        </div>
-        <div class="card-action">
-          <a href="/languages/<%= language.id %>">Details</a>
-        </div>
-      </div>
-    </div>
+    <%= erb :'languages/_item', :layout => false, :locals => {:language => language } %>
   <% end %>
 </div>

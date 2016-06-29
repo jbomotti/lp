@@ -59,6 +59,24 @@ $(function() {
     });
   });
   // End New Language AJAXing ///////////////////////////////
+  $('.add_remove_lang').on('click', '#add_language_button', function(event) {
+    event.preventDefault();
+    that = this;
+    var route = $(this).attr("href");
+    var promise = $.get(route);
+    promise.done(function(data){
+      $(that).parent().html(data);
+    });
+  });
+  $('.add_remove_lang').on('click', '#remove_language_button', function(event) {
+    event.preventDefault();
+    that = this;
+    var route = $(this).attr("href");
+    var promise = $.get(route);
+    promise.done(function(data){
+      $(that).parent().html(data);
+    });
+  })
 
 });
 

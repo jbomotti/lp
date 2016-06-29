@@ -10,6 +10,9 @@
   background-color: #005abc
 }
 
+.lang-btn {
+  font-size: .75em;
+}
 
 .lang-code {
   padding-top: 25px;
