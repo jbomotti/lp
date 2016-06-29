@@ -11,6 +11,13 @@
     </div>
     <div class="card-action">
       <a href="/languages/<%= language.id %>">Details</a>
+      <div class="row add_remove_lang">
+        <% if has_language?(language) %>
+          <%= erb :'languages/_remove_button', layout: false, locals: {language: language} %>
+        <% else  %>
+          <%= erb :'languages/_add_button', layout: false, locals: {language: language} %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

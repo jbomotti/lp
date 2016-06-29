@@ -15,11 +15,11 @@
   <% end %>
   </ul>
 
-  <div class="row">
+  <div class="row add_remove_lang">
     <% if has_language?(@language) %>
-      <a class="btn" href="/languages/<%= @language.id %>/delete">Remove From My Languages</a>
+      <a class="btn" id="remove_language_button" href="/languages/<%= @language.id %>/delete">Remove From My Languages</a>
     <% else  %>
-      <a class="btn" href="/languages/<%= @language.id %>/add">Add to My Languages</a>
+      <a class="btn" id="add_language_button" href="/languages/<%= @language.id %>/add">Add to My Languages</a>
     <% end %>
   </div>
 <% end %>

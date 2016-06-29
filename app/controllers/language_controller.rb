@@ -51,11 +51,19 @@ end
 get '/languages/:id/add' do
   @language = Language.find(params[:id])
   add_language(@language)
-  redirect back
+  if request.xhr?
+    erb :'languages/_remove_button', layout: false, locals: {language: @language}
+  else
+    redirect back
+  end
 end
 
 get '/languages/:id/delete' do
   @language = Language.find(params[:id])
   remove_language(@language)
-  redirect back
+  if request.xhr?
+    erb :'languages/_add_button', layout: false, locals: {language: @language}
+  else
+    redirect back
+  end
 end
