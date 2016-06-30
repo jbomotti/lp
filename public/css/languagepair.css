@@ -14,8 +14,8 @@
   background-color: #005abc
 }
 
-.card .card-content .card-title {
-  color: black;
+.center {
+  text-align: center;
 }
 
 .lang-btn {

@@ -5536,9 +5536,11 @@ small {
   transition: box-shadow .25s;
   border-radius: 2px; }
   .card .card-title {
-    color: #fff;
+    /*USED TO BE #fff*/
+    color: #000;
     font-size: 24px;
-    font-weight: 300; }
+    /*USED TO BE 300*/
+    font-weight: 500; }
     .card .card-title.activator {
       cursor: pointer; }
   .card.small, .card.medium, .card.large {

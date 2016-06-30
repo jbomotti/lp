@@ -1,0 +1,25 @@
+<!-- Same format from each item as displayed on All Languages page, used as format for posting new item via AJAX -->
+
+<div class="col s6 m3">
+  <div class="card small">
+    <div class="card-image lang-image">
+     <h1 class="circle lang-code"><%= language.code %></h1>
+    </div>
+    <div class="card-content lang-name">
+    </div>
+    <div class="card-action">
+      <h4 class="outlined-text"><%= language.name %></h4>
+      <p class="learner-count">Current Learners: <%= language.language_learners.count %></p>
+      <a href="/languages/<%= language.id %>">Details</a>
+      <% if auth_current_user %>
+        <div class="row add_remove_lang">
+          <% if has_language?(language) %>
+            <%= erb :'languages/_remove_button', layout: false, locals: {language: language} %>
+          <% else  %>
+            <%= erb :'languages/_add_button', layout: false, locals: {language: language} %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
