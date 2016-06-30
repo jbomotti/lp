@@ -5592,10 +5592,13 @@ small {
       margin: 0;
       color: inherit; }
     .card .card-content .card-title {
-      line-height: 48px; }
+      /*COMMENTED THIS OUT*/
+      /*line-height: 48px; */
+    }
   .card .card-action {
     border-top: 1px solid rgba(160, 160, 160, 0.2);
-    padding: 20px; }
+    /*USED TO BE FROM 20px*/
+    padding: 10px; }
     .card .card-action a {
       color: #ffab40;
       margin-right: 20px;

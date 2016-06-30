@@ -1,3 +1,7 @@
+/** {
+  border: 1px solid red;
+}*/
+
 #yielded {
   text-align: center;
 }
@@ -8,6 +12,10 @@
 
 #foot {
   background-color: #005abc
+}
+
+.card .card-content .card-title {
+  color: black;
 }
 
 .lang-btn {

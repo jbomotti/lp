@@ -3,6 +3,11 @@ get '/languages' do
   erb :'languages/index'
 end
 
+get '/languages/tester' do
+  @language = Language.find(1)
+  erb :'languages/_tester', :locals => {:language => @language }
+end
+
 get '/languages/new' do
   @language = Language.new
   if request.xhr? ## AKA, is this AJAX?
